@@ -70,9 +70,11 @@ def menu():
         elif opcion == "E":
             if veces_tiradas > 0: # Control de errores por si se intenta revisar la media y no se ha tirado ninguna vez
                 total_tiradas = 2 * veces_tiradas # Como en realidad lanzamos 2 dados en una tirada, se calcula el total
+                print(f"De las {total_tiradas} tiradas de dados:")
                 for numero, cantidad in tiradas.items():
                     porcentaje = (cantidad / total_tiradas) * 100
-                    print(f"El número {numero}: ha aparecido un {porcentaje:.2f}%")
+                    
+                    print(f"El número {numero} ha salido {cantidad} veces del total. Un {porcentaje:.2f}%")
                 print("")
                 menu()
             else:
